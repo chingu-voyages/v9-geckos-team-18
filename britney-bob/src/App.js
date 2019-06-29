@@ -64,7 +64,10 @@ class App extends Component {
           />
           <div className="content-box">
             <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
+            <Route path="/contact" 
+             render={(routeProps) => (
+              <Contact {...routeProps} submitForm={(data)=>console.log(data)} />
+            )}/>
             <Route path="/shop" component={Store} />
           </div>
         </Router>
