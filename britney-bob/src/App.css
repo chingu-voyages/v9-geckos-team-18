@@ -1,10 +1,20 @@
 .App {
-  background-image: url(images/main.png), url(images/left-door.png), url(images/right-door.png); 
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
   position: relative;
+}
+
+.main-img {
   height: 100vh;
+  position: fixed;
+}
+
+.left-door-img {
+  height: 100vh;
+  position: fixed;
+}
+
+.right-door-img{
+  height: 100vh;
+  position: fixed;  
 }
 
 .logo-img {
@@ -21,11 +31,12 @@
 }
 
 .content-box {
-  top: 15%;
-  left: 35%;
-  width: 30%;
-  height: 80%;
+  width: 24.7vw;
+  height: 64.4vh;
+  display: block;
   position: absolute;
+  left: 37.5vw;
+  top: 16vh;
   overflow-y: auto;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;

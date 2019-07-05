@@ -33,6 +33,27 @@ class App extends Component {
           />
         </div>
         <Router>
+          <img
+            src="assets/left-door.png"
+            alt="leftdoor"
+            width="100%"
+            height="auto"
+            className="left-door-img"
+          />
+          <img
+            src="assets/right-door.png"
+            alt="rightdoor"
+            width="100%"
+            height="auto"
+            className="right-door-img"
+          />
+          <img
+            src="assets/main.png"
+            alt="main"
+            width="100%"
+            height="auto"
+            className="main-img"
+          />
           <div className="logo-img">
             <BrandBanner />
           </div>
