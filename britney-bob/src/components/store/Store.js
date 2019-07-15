@@ -22,7 +22,7 @@ const renderItem = (obj, i, props) => {
       style={{ textAlign: "center", margin: "10px 0" }}
     >
       <div style={{ width: "100%", height: "auto" }}>
-        <img src={obj.url} height="auto" width="100%" />
+        <img src={obj.url} height="auto" width="100%" alt="product img" />
       </div>
       <div>{obj.title}</div>
       <div>{obj.price}</div>

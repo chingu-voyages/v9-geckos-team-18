@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import BrandBanner from "./components/BrandBanner";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Store from "./components/Store";
+import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
 
-import {addToCart} from "./handlers/cart";
+// let cartData = [{ title: "project", qty: 5, price: 100 }];
+import { addToCart, removeItem } from "./handlers/cart";
 
 let cartData = [{ title: "project", qty: 5, price: 100 }];
 let storeData = [
@@ -38,38 +38,47 @@ class App extends Component {
     super(props);
 
     this.state = {
-      showCart: false
+      showCart: false,
+      cartData: { items: [] }
     };
   }
+
+  componentDidMount() {
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    this.setState({ cartData: cartData });
+    console.log("KK", cartData);
+  }
+
+  deleteItem = item => {
+    console.log("item", item.id);
+    removeItem(item.id);
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    this.setState({ cartData: cartData });
+  };
+
+  addToCartClick = obj => {
+    addToCart(obj);
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    this.setState({ cartData: cartData });
+  };
 
   onCartClick = () => {
     this.setState({ showCart: true });
   };
 
   render() {
+    let cartData = this.state.cartData;
+    console.log("dfd", cartData);
     return (
       <div className="App">
         <div className={`cart ${this.state.showCart ? "show-cart" : ""}`}>
           <Cart
             cartData={cartData}
+            deleteItem={item => this.deleteItem(item)}
             closeCartBtn={() => this.setState({ showCart: false })}
           />
         </div>
         <Router>
-          <img
-            src="assets/main.png"
-            alt="main"
-            width="100%"
-            height="auto"
-            className="main-img"
-          />
-          <div />
-          <div className="logo-img">
-            <BrandBanner />
-          </div>
-          <div className="nav-img">
-            <Nav onCartClick={this.onCartClick} />
-          </div>
           <img
             src="assets/left-door.png"
             alt="leftdoor"
@@ -84,6 +93,19 @@ class App extends Component {
             height="auto"
             className="right-door-img"
           />
+          <img
+            src="assets/main.png"
+            alt="main"
+            width="100%"
+            height="auto"
+            className="main-img"
+          />
+          <div className="logo-img">
+            <BrandBanner />
+          </div>
+          <div className="nav-img">
+            <Nav onCartClick={this.onCartClick} />
+          </div>
           <div className="content-box">
             <Route path="/about" component={About} />
             <Route
@@ -101,7 +123,7 @@ class App extends Component {
                 <Store
                   {...routeProps}
                   data={storeData}
-                  addToCart={(obj)=>addToCart(obj)}
+                  addToCart={obj => this.addToCartClick(obj)}
                 />
               )}
             />

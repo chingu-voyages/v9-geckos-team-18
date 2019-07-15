@@ -32,7 +32,7 @@ export function addToCart(obj) {
       cart.total = cart.total + obj.price;
       cart.qty++;
       // save the updated cart in localstorage
-      localStorage.setItem("cart", JSON.stringify(cart));
+      return localStorage.setItem("cart", JSON.stringify(cart));
     }
   } else {
     // run this block of code if cart object is not present in localstorage
@@ -45,6 +45,22 @@ export function addToCart(obj) {
     cartModal.qty++;
     cartModal.total = obj.price;
     // store the cartModal object as a cart into localStorage
-    localStorage.setItem("cart", JSON.stringify(cartModal));
+    return localStorage.setItem("cart", JSON.stringify(cartModal));
   }
+}
+
+export function removeItem(id) {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  // console.log(cart, "afd")  
+  // use this varibale for creating the new item in cart
+    cart.items.map((item, i) => {
+      console.log(item.id, id)
+      if (item.id === id) {
+        cart.items.splice(i,1);
+        console.log("C", cart)
+        // save the updated cart in localstorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // store the true value into the itemPresent variable and return the map funtion
+      }
+    });
 }
