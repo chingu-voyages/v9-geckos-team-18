@@ -6,7 +6,7 @@ export function addToCart(obj) {
     // run this block of code if cart object is prsent in localstorage
     // convert cart data from strong to object
     let cart = JSON.parse(localStorage.getItem("cart"));
-    // use this varibale for creating the new item in cart
+    // use this variable for creating the new item in cart
     let itemPresent = false;
     cart.items.map(item => {
       if (item.id === obj.id) {
