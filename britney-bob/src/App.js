@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import BrandBanner from "./components/BrandBanner";
+import BrandBanner from "./components/brand-banner/BrandBanner";
 import Nav from "./components/nav/Nav";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
 

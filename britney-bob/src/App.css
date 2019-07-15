@@ -20,13 +20,13 @@
 .logo-img {
   position: absolute;
   width: 15vw;
-  left: 5vw;
+  left: 9.5vw;
   top: 20vh;
 }
 
 .nav-img {
   position: fixed;
-  right: 5vw;
+  right: 9.5vw;
   top: 20vh;  
 }
 

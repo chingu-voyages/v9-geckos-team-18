@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './contact.css';
 
 class Contact extends Component {
   constructor(props) {
@@ -38,13 +39,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          padding: "5px 1.5vw",
-          background: "#F4EADC",
-          height: "64vh"
-        }}
-      >
+      <div className='contact-box pa4'>
         <h2 style={{ textAlign: "center", margin: "0" }}>Contact</h2>
         <p style={{ textAlign: "center", margin: "10px 0", fontSize: "1.4rem" }}>
           Fill out the contact form below or email us at{" "}
