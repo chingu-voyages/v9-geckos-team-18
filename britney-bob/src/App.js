@@ -8,27 +8,70 @@ import Contact from "./components/contact/Contact";
 import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
 
-let cartData = [{ title: "project", qty: 5, price: 100 }];
+import { addToCart, removeItem } from "./handlers/cart";
 
+let storeData = [
+  {
+    title: "project",
+    id: 1,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  },
+  {
+    title: "project",
+    id: 2,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  },
+  {
+    title: "project",
+    id: 3,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  }
+];
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showCart: false
+      showCart: false,
+      cartData: { items: [] }
     };
   }
+
+  componentDidMount() {
+    let cartData = JSON.parse(localStorage.getItem("cart")) || 0;
+    this.setState({ cartData: cartData });
+    console.log("KK", cartData);
+  }
+
+  deleteItem = item => {
+    console.log("item", item.id);
+    removeItem(item.id);
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    this.setState({ cartData: cartData });
+  };
+
+  addToCartClick = obj => {
+    addToCart(obj);
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    this.setState({ cartData: cartData });
+  };
 
   onCartClick = () => {
     this.setState({ showCart: true });
   };
 
   render() {
+    let cartData = this.state.cartData;
+    console.log("dfd", cartData);
     return (
       <div className="App">
         <div className={`cart ${this.state.showCart ? "show-cart" : ""}`}>
           <Cart
             cartData={cartData}
+            deleteItem={item => this.deleteItem(item)}
             closeCartBtn={() => this.setState({ showCart: false })}
           />
         </div>
@@ -62,11 +105,25 @@ class App extends Component {
           </div>
           <div className="content-box">
             <Route path="/about" component={About} />
-            <Route path="/contact" 
-             render={(routeProps) => (
-              <Contact {...routeProps} submitForm={(data)=>console.log(data)} />
-            )}/>
-            <Route path="/shop" component={Store} />
+            <Route
+              path="/contact"
+              render={routeProps => (
+                <Contact
+                  {...routeProps}
+                  submitForm={data => console.log(data)}
+                />
+              )}
+            />
+            <Route
+              path="/shop"
+              render={routeProps => (
+                <Store
+                  {...routeProps}
+                  data={storeData}
+                  addToCart={obj => this.addToCartClick(obj)}
+                />
+              )}
+            />
           </div>
         </Router>
       </div>

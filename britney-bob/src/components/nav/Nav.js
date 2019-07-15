@@ -7,13 +7,15 @@ const onNavLinkClick = (obj, props) => {
 }
 
 const navListItem = (obj, i, props) => {
+  let cartData = JSON.parse(localStorage.getItem("cart")) || 0 ;
+  console.log(cartData, "cartdat")
    return (
     <li className="nav-list__ul__li pointer dn black flex items-center justify-center tc" onClick={onNavLinkClick(obj, props)} key={i}>
-        <Link to={obj.title.toLowerCase()}>
-          <span className="nav-list__ul__li-text fw3 tc dib">{obj.title}</span>
-        </Link>
-        {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box white sans-serif fw1 ma1 pa1">5</div> : null}
-      </li>
+      <Link to={obj.title.toLowerCase()}>
+        <span className="nav-list__ul__li-text fw3 tc dib">{obj.title}</span>
+      </Link>
+      {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box white sans-serif fw1 ma1 pa1">{cartData.qty}</div> : null}
+    </li>
   )
 };
 
