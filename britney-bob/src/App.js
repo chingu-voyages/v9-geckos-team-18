@@ -7,9 +7,31 @@ import Nav from "./components/nav/Nav";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Store from "./components/Store";
-import Cart from "./components/cart/cart";
+import Cart from "./components/cart/Cart";
+
+import {addToCart} from "./handlers/cart";
 
 let cartData = [{ title: "project", qty: 5, price: 100 }];
+let storeData = [
+  {
+    title: "project",
+    id: 1,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  },
+  {
+    title: "project",
+    id: 2,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  },
+  {
+    title: "project",
+    id: 3,
+    price: 100,
+    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+  }
+];
 
 class App extends Component {
   constructor(props) {
@@ -64,11 +86,25 @@ class App extends Component {
           />
           <div className="content-box">
             <Route path="/about" component={About} />
-            <Route path="/contact" 
-             render={(routeProps) => (
-              <Contact {...routeProps} submitForm={(data)=>console.log(data)} />
-            )}/>
-            <Route path="/shop" component={Store} />
+            <Route
+              path="/contact"
+              render={routeProps => (
+                <Contact
+                  {...routeProps}
+                  submitForm={data => console.log(data)}
+                />
+              )}
+            />
+            <Route
+              path="/shop"
+              render={routeProps => (
+                <Store
+                  {...routeProps}
+                  data={storeData}
+                  addToCart={(obj)=>addToCart(obj)}
+                />
+              )}
+            />
           </div>
         </Router>
       </div>
