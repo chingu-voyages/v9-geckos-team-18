@@ -1,86 +1,54 @@
-.App{
+.App {
   position: relative;
 }
-.main-img{
+
+.main-img {
   height: 100vh;
   position: fixed;
 }
-.logo-img{
+
+.left-door-img {
+  height: 100vh;
   position: fixed;
+}
+
+.right-door-img{
+  height: 100vh;
+  position: fixed;  
+}
+
+.logo-img {
+  position: absolute;
   width: 15vw;
-  left: 10vw;
+  left: 9.5vw;
   top: 20vh;
 }
-.nav-img{
+
+.nav-img {
   position: fixed;
-  right: 10vw;
+  right: 9.5vw;
   top: 20vh;  
 }
-.left-door-img{
-  position: absolute;
-  width: 15.2vw;
-  left: 35.3vw;
-  top: 16vh;
-  height: 64vh;  
-}
-.right-door-img{
-  position: fixed;
-  width: 15.2vw;
-  right: 34.4vw;
-  top: 16vh;
-  height: 64vh;  
-}
-.content-box{
-  width: 30.4vw;
-  height: 64vh;
+
+.content-box {
+  width: 24.7vw;
+  height: 64.4vh;
   display: block;
   position: absolute;
-  left: 35.3vw;
+  left: 37.5vw;
   top: 16vh;
   overflow-y: auto;
   overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
 }
 
-.cart{
+.cart {
   position: fixed;
   right: -30vw;
   top: 5vh;
   z-index: 1000;
 }
-.show-cart{
+
+.show-cart {
   right: 0
 }
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

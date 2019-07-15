@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import BrandBanner from "./components/BrandBanner";
+import BrandBanner from "./components/brand-banner/BrandBanner";
 import Nav from "./components/nav/Nav";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
 
@@ -77,19 +77,6 @@ class App extends Component {
         </div>
         <Router>
           <img
-            src="assets/main.png"
-            alt="main"
-            width="100%"
-            height="auto"
-            className="main-img"
-          />
-          <div className="logo-img">
-            <BrandBanner />
-          </div>
-          <div className="nav-img">
-            <Nav onCartClick={this.onCartClick} />
-          </div>
-          <img
             src="assets/left-door.png"
             alt="leftdoor"
             width="100%"
@@ -103,6 +90,19 @@ class App extends Component {
             height="auto"
             className="right-door-img"
           />
+          <img
+            src="assets/main.png"
+            alt="main"
+            width="100%"
+            height="auto"
+            className="main-img"
+          />
+          <div className="logo-img">
+            <BrandBanner />
+          </div>
+          <div className="nav-img">
+            <Nav onCartClick={this.onCartClick} />
+          </div>
           <div className="content-box">
             <Route path="/about" component={About} />
             <Route

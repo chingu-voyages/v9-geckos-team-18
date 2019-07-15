@@ -1,15 +1,21 @@
+@font-face {
+    font-family: 'elephantregular';
+    src: url('elephnt-webfont.woff2') format('woff2'),
+         url('elephnt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   /* this defines what 1rem is */
   font-size: 62.5%; /* 1 rem = 10px; 10/16(browser default size) 62.5% === 10px */
 }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'elephantregular', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.6rem;
 }
 
 code {
