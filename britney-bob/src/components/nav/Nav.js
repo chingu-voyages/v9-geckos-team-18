@@ -7,12 +7,14 @@ const onNavLinkClick = (obj, props) => {
 }
 
 const navListItem = (obj, i, props) => {
+  let cartData = JSON.parse(localStorage.getItem("cart")) || 0 ;
+  console.log(cartData, "cartdat")
    return (
     <li className="nav-list__ul__li" onClick={onNavLinkClick(obj, props)} key={i}>
         <Link to={obj.title.toLowerCase()}>
           <span className="nav-list__ul__li-text">{obj.title}</span>
         </Link>
-        {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box">5</div> : null}
+        {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box">{cartData.qty}</div> : null}
       </li>
   )
 };

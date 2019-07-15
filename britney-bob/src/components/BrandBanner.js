@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BrandBanner() {
   return (
-    <div>
+    <Link to="/" >
       <img
         src="assets/title.svg"
         alt="logo"
@@ -18,12 +19,15 @@ function BrandBanner() {
           width: "100%",
           fontSize: "2.8rem",
           letterSpacing: ".2rem",
-          lineHeight: "2.5rem"
+          lineHeight: "2.5rem",
+          color: "black"
         }}
       >
-        BRITNEY<br />BOB
+        BRITNEY
+        <br />
+        BOB
       </h1>
-    </div>
+    </Link>
   );
 }
 

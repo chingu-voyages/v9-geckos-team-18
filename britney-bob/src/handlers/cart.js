@@ -57,7 +57,7 @@ export function removeItem(id) {
       console.log(item.id, id)
       if (item.id === id) {
         cart.items.splice(i,1);
-        console.log("C", cart)
+        cart.qty = cart.qty - item.qty;
         // save the updated cart in localstorage
         localStorage.setItem("cart", JSON.stringify(cart));
         // store the true value into the itemPresent variable and return the map funtion

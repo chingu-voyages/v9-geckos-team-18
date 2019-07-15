@@ -8,10 +8,8 @@ import Contact from "./components/Contact";
 import Store from "./components/store/Store";
 import Cart from "./components/cart/Cart";
 
-// let cartData = [{ title: "project", qty: 5, price: 100 }];
 import { addToCart, removeItem } from "./handlers/cart";
 
-let cartData = [{ title: "project", qty: 5, price: 100 }];
 let storeData = [
   {
     title: "project",
@@ -32,7 +30,6 @@ let storeData = [
     url: "https://magnessa.com/imagesmag/pro/24.jpg"
   }
 ];
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +41,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let cartData = JSON.parse(localStorage.getItem("cart"));
+    let cartData = JSON.parse(localStorage.getItem("cart")) || 0;
     this.setState({ cartData: cartData });
     console.log("KK", cartData);
   }
@@ -80,6 +77,19 @@ class App extends Component {
         </div>
         <Router>
           <img
+            src="assets/main.png"
+            alt="main"
+            width="100%"
+            height="auto"
+            className="main-img"
+          />
+          <div className="logo-img">
+            <BrandBanner />
+          </div>
+          <div className="nav-img">
+            <Nav onCartClick={this.onCartClick} />
+          </div>
+          <img
             src="assets/left-door.png"
             alt="leftdoor"
             width="100%"
@@ -93,19 +103,6 @@ class App extends Component {
             height="auto"
             className="right-door-img"
           />
-          <img
-            src="assets/main.png"
-            alt="main"
-            width="100%"
-            height="auto"
-            className="main-img"
-          />
-          <div className="logo-img">
-            <BrandBanner />
-          </div>
-          <div className="nav-img">
-            <Nav onCartClick={this.onCartClick} />
-          </div>
           <div className="content-box">
             <Route path="/about" component={About} />
             <Route

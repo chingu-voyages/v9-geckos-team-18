@@ -37,9 +37,9 @@
   position: absolute;
   left: 35.3vw;
   top: 16vh;
-  /* overflow-y: auto;
+  overflow-y: auto;
   overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;  */
+  -ms-overflow-style: none; 
 }
 
 .cart{
