@@ -1,4 +1,4 @@
-h2, p {
+h2, p, a {
 	color: #445F49;
 }
 
@@ -6,7 +6,23 @@ h2 {
 	letter-spacing: .02em;
 }
 
+textarea {
+	resize: none;
+	height: 25vh;
+}
+
 .contact-box {
     background: #F4EADC;
     height: 64vh;
+}
+
+.submit-button {
+	background: #173C28;
+	border: none;
+}
+
+@media screen and (max-height: 500px) {
+  textarea {
+    height: 10vh;
+  }
 }
