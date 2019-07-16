@@ -14,7 +14,7 @@ const navListItem = (obj, i, props) => {
       <Link to={obj.title.toLowerCase()}>
         <span className="nav-list__ul__li-text fw3 tc dib">{obj.title}</span>
       </Link>
-      {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box white sans-serif fw1 ma1 pa1">{cartData.qty}</div> : null}
+      {obj.title.toLowerCase() === "cart" ? <div className="cart-qty-box white sans-serif fw1 ma1">{cartData.qty}</div> : null}
     </li>
   )
 };
@@ -53,7 +53,7 @@ const SidePopupNav = props => {
           height="auto"
           className="banner-img"
         />
-        <ul className="nav-list__ul absolute tc ma0 pa0 link list flex flex-column justify-between">
+        <ul className="nav-list__ul absolute tc ma0 pa0 list flex flex-column justify-between">
           {data1.map((obj, i) => {
             return navListItem(obj, i, props);
           })}
@@ -64,5 +64,3 @@ const SidePopupNav = props => {
 };
 
 export default SidePopupNav;
-
-// className="nav-list__ul"

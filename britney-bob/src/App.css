@@ -44,11 +44,10 @@
 
 .cart {
   position: fixed;
-  right: -30vw;
+  right: -40vw;
   top: 5vh;
   z-index: 1000;
 }
 
 .show-cart {
-  right: 0
-}
+  right: 0}

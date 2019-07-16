@@ -7,14 +7,14 @@ class Cart extends Component {
     if (data !== 0) {
       return data.items.map((item, i) => {
         return (
-          <div className="cart-li" key={i}>
-            <div className="cart-li__col-1">
-              <div onClick={() => deleteItem(item)}>X</div>
-              <div className="cart-li__img-box" />
-              <div className="cart-li--product-name">{item.title}</div>
+          <div className="flex sans-serif ma2 fw3" key={i}>
+            <div className="cart-li__col-1 flex items-center">
+              <div className='pointer' onClick={() => deleteItem(item)}>x</div>
+              <div className="cart-li__img-box ml3" />
+              <div className="ml2">{item.title}</div>
             </div>
-            <div className="cart-li__col-2">{item.qty}</div>
-            <div className="cart-li__col-3">$ {item.amount}</div>
+            <div className="cart-li__col-2 flex items-center justify-center">{item.qty}</div>
+            <div className="cart-li__col-3 flex items-center justify-end">${item.amount}</div>
           </div>
         );
       });
@@ -24,15 +24,13 @@ class Cart extends Component {
   render() {
     let { cartData, closeCartBtn, deleteItem } = this.props;
     return (
-      <div className="cart-box">
-        <div className="cart-box__close-btn" onClick={closeCartBtn}>
-          X
-        </div>
-        <h2 className="cart-box__title">Cart</h2>
-        <div className="cart-header">
+      <div className="cart-box overflow-hidden ph5 pv4">
+        <div className="sans-serif tr f1 fw1 pointer" onClick={closeCartBtn}>x</div>
+        <h2 className="tc f2 fw3 pb4">Cart</h2>
+        <div className="flex sans-serif f6">
           <div className="cart-header__col-1">ITEM</div>
-          <div className="cart-header__col-2">QTY</div>
-          <div className="cart-header__col-3">PRICE</div>
+          <div className="cart-header__col-2 tc">QTY</div>
+          <div className="cart-header__col-3 tr">PRICE</div>
         </div>
         <hr />
         <div className="cart-main">{this.renderItem(cartData, deleteItem)}</div>
@@ -40,7 +38,7 @@ class Cart extends Component {
         <div className="cart-footer">
           <div className="cart-footer-text" />
         </div>
-        <div className="cart__checkout-btn">CHECKOUT</div>
+        <div className="cart__checkout-btn flex sans-serif fw7 justify-center tracked white w-100 pa3">CHECKOUT</div>
       </div>
     );
   }

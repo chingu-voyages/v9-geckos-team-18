@@ -40,79 +40,42 @@ class Contact extends Component {
   render() {
     return (
       <div className='contact-box pa4'>
-        <h2 style={{ textAlign: "center", margin: "0" }}>Contact</h2>
-        <p style={{ textAlign: "center", margin: "10px 0", fontSize: "1.4rem" }}>
+        <h2 className='tc f2 fw3 pb3'>Contact</h2>
+        <p className='sans-serif f4-l f5-m f6 fw3'>
           Fill out the contact form below or email us at{" "}
-          <strong> hey@britneybob.com</strong>
+          <a className='fw7' href="mailto:hey@britneybob.com?Subject=Hello%20Lover" target="_top">hey@britneybob.com</a>.
         </p>
-
-        <form onSubmit={this.handleSubmit}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "10px 0",
-              width: "100%"
-            }}
-          >
+        <form className='black-80 sans-serif' onSubmit={this.handleSubmit}>
+          <div className='flex justify-between w-100'>
             <input
-              style={{
-                border: ".5px solid lightgray",
-                padding: "1%",
-                width: "45%"
-              }}
+              className='input-reset ba b--black-10 pa2 mr1 mb3 db fw3 w-50'
               placeholder="FIRST NAME"
               value={this.state.firstName}
               onChange={e => this.handleChange("firstName", e)}
             />
             <input
-              style={{
-                border: ".5px solid lightgray",
-                padding: "1%",
-                width: "45%"
-              }}
+              className='input-reset ba b--black-10 pa2 ml1 mb3 db fw3 w-50'
               placeholder="LAST NAME"
               value={this.state.lastName}
               onChange={e => this.handleChange("lastName", e)}
             />
           </div>
           <input
-            style={{
-              border: ".5px solid lightgray",
-              display: "block",
-              margin: "10px auto",
-              padding: "1%",
-              width: "98%"
-            }}
+            className='input-reset ba b--black-10 pa2 mb3 db fw3 w-100'
             placeholder="EMAIL"
             value={this.state.email}
             onChange={e => this.handleChange("email", e)}
           />
           <textarea
-            style={{
-              border: ".5px solid lightgray",
-              display: "block",
-              height: "20vh",
-              margin: "10px 0",
-              padding: "1%",
-              width: "98%"
-            }}
+            className='input-reset ba b--black-10 pa2 mb3 db w-100 fw3'
             placeholder="SAY HI :)"
             value={this.state.message}
             onChange={e => this.handleChange("message", e)}
           />
           <input
+            className='submit-button fw7 link tracked white w-100 pa3'
             type="submit"
-            value="Submit"
-            style={{
-              backgroundColor: "#173C28",
-              color: "white",
-              height: "5vh",
-              letterSpacing: ".5px",
-              margin: "10px 0",
-              width: "100%",
-              border: "none"
-            }}
+            value="SUBMIT"
           />
         </form>
       </div>

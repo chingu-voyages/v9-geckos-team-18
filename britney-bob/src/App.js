@@ -5,31 +5,31 @@ import BrandBanner from "./components/brand-banner/BrandBanner";
 import Nav from "./components/nav/Nav";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
-import Store from "./components/store/Store";
+import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
-
 import { addToCart, removeItem } from "./handlers/cart";
 
 let storeData = [
   {
-    title: "project",
+    title: "Product",
     id: 1,
     price: 100,
-    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+    url: "https://www.thevintagenews.com/wp-content/uploads/2019/02/madonna-di-castelfiorentino-1280s-453x640.jpg"
   },
   {
-    title: "project",
+    title: "Product",
     id: 2,
     price: 100,
-    url: "https://magnessa.com/imagesmag/pro/24.jpg"
+    url: "https://66.media.tumblr.com/fc360f5a220638218c302762b02a96c3/tumblr_myndcmZsw91r6f0d9o1_500.jpg"
   },
   {
-    title: "project",
+    title: "Product",
     id: 3,
     price: 100,
-    url: "https://magnessa.com/imagesmag/pro/24.jpg"
-  }
+    url: "https://66.media.tumblr.com/fa58ad72bf9eba2211aa4525bdee56de/tumblr_mqt1yiHffJ1r6f0d9o1_500.jpg"
+  },
 ];
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -117,7 +117,7 @@ class App extends Component {
             <Route
               path="/shop"
               render={routeProps => (
-                <Store
+                <Shop
                   {...routeProps}
                   data={storeData}
                   addToCart={obj => this.addToCartClick(obj)}

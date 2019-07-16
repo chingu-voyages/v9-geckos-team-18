@@ -1,0 +1,18 @@
+.contact-store{
+    width: 66.1vw;
+    height: 94.9vh;
+    background: #F4EADC;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 5.1vh;
+  }
+
+button {
+  	background: #173C28;
+  	border: none;
+  }
+
+.product-price {
+	font-size: 1.2em;
+}
