@@ -38,7 +38,7 @@ class Cart extends Component {
         <div className="cart-footer">
           <div className="cart-footer-text" />
         </div>
-        <div className="cart__checkout-btn flex sans-serif fw7 justify-center tracked white w-100 pa3">CHECKOUT</div>
+        <div className="cart__checkout-btn flex pointer sans-serif fw7 justify-center tracked white w-100 pa3">CHECKOUT</div>
       </div>
     );
   }
