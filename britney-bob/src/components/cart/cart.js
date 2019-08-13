@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import "./cart.css";
 
 class Cart extends Component {
+  componentDidMount() {
+    let x = window.matchMedia("(max-width: 700px)");
+    let cartBox = document.querySelector(".cart-box");
+    if (x.matches) {
+      cartBox.style.width = "";
+    }else{
+      cartBox.style.width = "34vw";
+      cartBox.classList.add("cart");
+    }
+  }
+
   renderItem = (data, deleteItem) => {
     console.log("slfjslkdfj", data);
     if (data !== 0) {
